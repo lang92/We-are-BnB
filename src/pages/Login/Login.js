@@ -44,7 +44,7 @@ const Login = () => {
         </S.InputWrapper>
         <S.KakaoLogo
           alt="카카오 로그인"
-          src="/images/kakao_login_medium_wide.png"
+          src="/images/kakao_login_large_wide.png"
           onClick={handleLogin}
         />
       </S.Login>
