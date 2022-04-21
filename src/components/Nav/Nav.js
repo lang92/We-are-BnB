@@ -58,6 +58,7 @@ const Nav = () => {
           <Login />
         </Modal>
       )}
+      <S.VirtualNav />
     </>
   );
 };

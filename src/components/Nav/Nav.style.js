@@ -11,6 +11,7 @@ export const Nav = styled.nav`
   background-color: black;
   color: white;
   font-family: 'Fredoka Bold';
+  z-index: 1000;
 `;
 
 export const Logo = styled.div`
@@ -102,3 +103,7 @@ export const SubMenu = styled.p`
 `;
 
 export const SelectBox = styled.div``;
+
+export const VirtualNav = styled.div`
+  height: 80px;
+`;
