@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { HORIZONTAL_PADDING } from 'pages/Main/Main.style';
 
 const IMG_MARGIN = 100;
 const IMG_SIZE = 300;
@@ -8,7 +9,6 @@ export const SlideWrapper = styled.div`
   align-items: center;
   width: 100%;
   height: 624px;
-  background-color: white;
   overflow: hidden;
 `;
 
@@ -17,7 +17,7 @@ export const Slide = styled.div`
   ${({ imgIdx }) =>
     `transform: translateX(calc(-${
       IMG_MARGIN + IMG_SIZE
-    }px * ${imgIdx} + 50vw - ${IMG_SIZE}px/2 - ${IMG_MARGIN}px))`};
+    }px * ${imgIdx} + 50vw - ${HORIZONTAL_PADDING}px - ${IMG_SIZE}px/2))`};
   ${({ isTransitionOn }) => isTransitionOn && `transition: 0.5s;`};
 `;
 
@@ -58,14 +58,14 @@ export const GradientLeft = styled(Gradient)`
   left: 0;
   background: linear-gradient(
     to right,
-    white 70%,
+    black 70%,
     rgba(246, 244, 241, 0) 94.9%
   );
 `;
 
 export const GradientRight = styled(Gradient)`
   right: 0;
-  background: linear-gradient(to left, white 70%, rgba(246, 244, 241, 0) 94.9%);
+  background: linear-gradient(to left, black 70%, rgba(246, 244, 241, 0) 94.9%);
 `;
 
 export const IndicatorWrapper = styled.div`
@@ -82,12 +82,12 @@ export const Indicator = styled.span`
   transition: 0.2s;
   ${({ isCurrent }) =>
     isCurrent
-      ? `background-color: gray;
+      ? `background-color: white;
          transform: scale(1.3);`
-      : `background-color: lightgray;`}
+      : `background-color: gray;`}
 
   &:hover {
-    background-color: gray;
+    background-color: white;
     transform: scale(1.3);
   }
 

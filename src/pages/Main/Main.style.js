@@ -1,9 +1,11 @@
 import styled from 'styled-components';
 
+export const HORIZONTAL_PADDING = 80;
+
 export const Main = styled.main`
-  /* ${({ theme }) => theme.style.flex('column', 'flex-end')}; */
+  height: 1600px;
+  padding: 40px ${`${HORIZONTAL_PADDING}px`};
+  background-color: black;
   color: ${({ theme }) => theme.colors.brand};
   font-family: 'Fredoka Bold';
-  height: 1600px;
-  margin: 40px 80px;
 `;
