@@ -14,7 +14,7 @@ const Login = () => {
   const handleLogin = () => {
     const isValid =
       Object.keys(additionalInfo).length === INPUT_LIST.length &&
-      Object.values(additionalInfo).every((el) => !!el);
+      Object.values(additionalInfo).every(Boolean);
 
     if (!isValid) {
       return alert('항목을 모두 입력해주세요!');
@@ -28,27 +28,25 @@ const Login = () => {
   };
 
   return (
-    <>
-      <S.Login>
-        <S.Greetings>위아비엔비에 오신 것을 환영합니다.</S.Greetings>
-        <S.GuideText>추가 정보 입력하고 가입하기</S.GuideText>
-        <S.InputWrapper onChange={handleInput} autoComplete="off">
-          {INPUT_LIST.map((input) => (
-            <S.SignupInput
-              key={input.id}
-              name={input.name}
-              placeholder={input.placeholder}
-              type={input.type}
-            />
-          ))}
-        </S.InputWrapper>
-        <S.KakaoLogo
-          alt="카카오 로그인"
-          src="/images/kakao_login_large_wide.png"
-          onClick={handleLogin}
-        />
-      </S.Login>
-    </>
+    <S.Login>
+      <S.Greetings>위아비엔비에 오신 것을 환영합니다.</S.Greetings>
+      <S.GuideText>추가 정보 입력하고 가입하기</S.GuideText>
+      <S.InputWrapper onChange={handleInput} autoComplete="off">
+        {INPUT_LIST.map((input) => (
+          <S.SignupInput
+            key={input.id}
+            name={input.name}
+            placeholder={input.placeholder}
+            type={input.type}
+          />
+        ))}
+      </S.InputWrapper>
+      <S.KakaoLogo
+        alt="카카오 로그인"
+        src="/images/kakao_login_large_wide.png"
+        onClick={handleLogin}
+      />
+    </S.Login>
   );
 };
 
